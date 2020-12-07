@@ -4,8 +4,9 @@ def findGCD(a, b):
         t = a
         a = b
         b = t % b
+        print(f"a={a}, b={b}, t={t}")
     return a        # return the divisor
-res1 = findGCD(36, 12624)
+res1 = findGCD(24, 248)
 print(res1)
 
 
