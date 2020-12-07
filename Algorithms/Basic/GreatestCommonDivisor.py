@@ -1,11 +1,19 @@
 def findGCD(a, b):
-    # medified method 1 (no need of else)
-    while (a < b):
-        r = b % a
-        if r == 0:
-            return a
-        b = a
-        a = r
-
+    # method 2
+    while b != 0:   # run till remainder is not zero
+        t = a
+        a = b
+        b = t % b
+    return a        # return the divisor
 res1 = findGCD(36, 12624)
 print(res1)
+
+
+res2 = findGCD(248, 24)
+print(res2)
+
+
+# GCD (20,8)
+# a   |   b   |   r
+# 20      8       4
+# 8       4       0
