@@ -1,0 +1,2 @@
+- Implement stack bound and handle stack overflow.
+- Add & use isempty()
