@@ -16,7 +16,7 @@ class LinkedListStack:
             self.head = newnode
 
     def pop(self):
-        if self.head == None:
+        if self.isEmpty():
             print("Stack is empty")
         elif self.head.next == None:
             print("popped "+str(self.head.data))
@@ -28,6 +28,9 @@ class LinkedListStack:
             del self.head
             self.head = newhead
             print("popped "+str(element))
+
+    def isEmpty(self):
+        return self.head == None
 
     def printStack(self):
         current = self.head
