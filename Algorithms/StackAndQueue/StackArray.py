@@ -1,12 +1,16 @@
 class StackArray:
-    def __init__(self):
+    def __init__(self,size):
         self.stack = []
+        self.size = size
 
     def isEmpty(self):
         return len(self.stack) == 0
 
     def push(self, value):
-        self.stack.insert(0, value)
+        if self.size > len(self.stack):
+            self.stack.insert(0, value)
+        else:
+            print("Stack Overflow")
 
     def pop(self):
         if not self.isEmpty():
@@ -25,7 +29,7 @@ class StackArray:
 
 def runQueue():
     print("Stack Array operations")
-    sa = StackArray()
+    sa = StackArray(5)
     sa.push(1)
     sa.push(2)
     sa.push(3)
@@ -34,5 +38,10 @@ def runQueue():
     sa.printStack()
     print(str(sa.pop()))
     sa.printStack()
+    sa.push(30)
+    sa.printStack()
+    sa.push(40)
+    sa.push(50)
+
 
 #runQueue()
