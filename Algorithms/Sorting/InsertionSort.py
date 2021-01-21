@@ -18,14 +18,14 @@ def insertionSort(arr):
         j = i - 1
         #increments all the elements > arr[i] by one index
         while j >= 0 and current < arr[j]:
-            arr[j] = arr[j+1]
+            arr[j+1] = arr[j]
             j -= 1
         arr[j + 1] = current
 
     print(arr)
 
 
-arr = [1,4,2,6,4,9]
+arr = [4,2,5,1,6,1]
 arr2 = [1]
 insertionSort(arr)
 insertionSort(arr2)
