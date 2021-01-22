@@ -1,20 +1,3 @@
-"""
-a = 2,4,5,7
-b = 1,2, 3 , 6
-
-"""
-
-# def mergeSortedArrays(arr1,arr2):
-#     for i in range(len(arr1)):
-#         key = arr1[i]
-#         j = len(arr2)-1
-#         while j >= 0 and arr2[j] > key:
-#             arr2[j+1] = arr2[j]
-#             j -= 1
-#         arr2[j] = key
-#
-#     print(arr2)
-
 def mergeSortedArrays(arr1,arr2):
     len1,len2 = len(arr1), len(arr2)
     length = len1 + len2
@@ -38,10 +21,60 @@ def mergeSortedArrays(arr1,arr2):
         counter += 1
     print(arr)
 
+def mergeSortedArrays2(arr1,arr2):
+    """with duplicates"""
+    m,n = len(arr1),len(arr2)
+    sortedMerge = []
+    i = j = 0
+    while i < m and j < n:
+        if arr1[i] < arr2[j]:
+            sortedMerge.append(arr1[i])
+            i += 1
+        elif arr1[i] > arr2[j]:
+            sortedMerge.append(arr2[j])
+            j += 1
+        elif arr1[i] == arr2[j]:
+            sortedMerge.append(arr1[i])
+            i += 1
+    # Empty remaining elements
+    while i < m:
+        sortedMerge.append(arr1[i])
+        i += 1
+    while j < n:
+        sortedMerge.append(arr2[j])
+        j += 1
+    print(sortedMerge)
 
-a = [2,4,4,5,7]
-b = [1,3,6]
-mergeSortedArrays(a,b)
+
+def mergeSortedArrays3(arr1,arr2):
+    """without duplicates"""
+    m,n = len(arr1),len(arr2)
+    sortedMerge = []
+    i = j = 0
+    while i < m and j < n:
+        if arr1[i] < arr2[j]:
+            sortedMerge.append(arr1[i])
+            i += 1
+        elif arr1[i] > arr2[j]:
+            sortedMerge.append(arr2[j])
+            j += 1
+        elif arr1[i] == arr2[j]:
+            sortedMerge.append(arr1[i])
+            i += 1
+            j += 1
+    # Empty remaining elements
+    while i < m:
+        sortedMerge.append(arr1[i])
+        i += 1
+    while j < n:
+        sortedMerge.append(arr2[j])
+        j += 1
+    print(sortedMerge)
+
+arr1 = [1, 2, 4, 5, 6]
+arr2 = [2, 3, 5, 7]
+mergeSortedArrays(arr1,arr2)
+mergeSortedArrays2(arr1,arr2)
 
 
 
