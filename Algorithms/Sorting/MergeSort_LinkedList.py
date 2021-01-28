@@ -2,7 +2,17 @@ from Algorithms.StackAndQueue import QueueWithLinkedList as Q
 
 def merge(S1,S2,S):
     """inside merge"""
-    
+    while not S1.isEmpty() and not S2.isEmpty():
+        if S1.getFirst() < S2.getFirst():
+            S.enQueue(S1.deQueue())
+        else:
+            S.enQueue(S2.deQueue())
+
+    while not S1.isEmpty():
+        S.enQueue(S1.deQueue())
+    while not S2.isEmpty():
+        S.enQueue(S2.deQueue())
+
 
 def mergesort(S):
     """Mergesort"""
@@ -22,11 +32,11 @@ def mergesort(S):
             S2.enQueue(S.deQueue())
         count += 1
 
-    S1.printQueue()
-    S2.printQueue()
+    # S1.printQueue()
+    # S2.printQueue()
     mergesort(S1)
     mergesort(S2)
-    merge(S1,S2,S)
+    merge(S1, S2, S)
 
 
 S = Q.QueueWithLinkedList()
@@ -41,5 +51,5 @@ S.printQueue()
 mergesort(S)
 
 # Sorted Linked List
-#S.printQueue()
+S.printQueue()
 
