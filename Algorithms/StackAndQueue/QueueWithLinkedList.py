@@ -21,6 +21,10 @@ class QueueWithLinkedList:
     def __len__(self):
         return self.size
 
+    def getFirst(self):
+        if self.size > 0:
+            return self.head.data
+
     def isEmpty(self):
         return self.head == self.tail == None
 
