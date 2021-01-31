@@ -3,12 +3,11 @@
 partition(A,start,end)
 pivot = A[end]
 p_index = start
-i = 0
-
-for i in range(start,end-1):
+for i in range(start,end-1): # end-1 to exclude pivot element
     if A[i] < pivot:
         swap(A[i],A[p_index])
         p_index += 1
+swap(A[p_index],A[end])
 
 """
 
