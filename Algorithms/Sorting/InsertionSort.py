@@ -17,7 +17,7 @@ def insertionSort(arr):
         current = arr[i]
         j = i - 1
         #increments all the elements > arr[i] by one index
-        while j >= 0 and current < arr[j]:
+        while j >= 0 and arr[j] > current:
             arr[j+1] = arr[j]
             j -= 1
         arr[j + 1] = current
